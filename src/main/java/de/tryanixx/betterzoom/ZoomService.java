@@ -11,13 +11,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
-
 import java.util.List;
 
 public class ZoomService extends LabyModAddon {
 
     private int key;
-    private boolean lastKeyDown = false;
+    private boolean lastKeyDown;
     private float prevZoom;
     private float zoomFactor = 1;
     private int wheelSig = 0;

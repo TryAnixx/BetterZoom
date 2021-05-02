@@ -1,24 +1,36 @@
 name: BetterZoom
-on: [ push ]
+
+on:
+  push:
+    tags: 'v*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up JDK 8
-        uses: actions/setup-java@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
         with:
-          java-version: '8'
-          distribution: 'adopt'
-      # Add Execute permissions to gradle wrapper
-      - name: Change wrapper permissions
-        run: 'chmod +x gradlew'
-      # Build the addon
+          java-version: 1.8
+
+      - name: Cache Gradle packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+          restore-keys: ${{ runner.os }}-gradle
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       - name: Build with Gradle
-        run: 'sh gradlew build --no-daemon'
-      # Upload the built addon
-      - uses: actions/upload-artifact@v2
+        run: ./gradlew build
+
+      - name: Upload jar
+        uses: actions/upload-artifact@v1
         with:
-          name: 'BetterZoom'
-          path: ./build/libs/*.jar
+          name: Artifacts
+          path: build/libs/

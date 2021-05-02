@@ -2,7 +2,13 @@ name: BetterZoom
 
 on:
   push:
-    tags: 'v*'
+    branches:
+    - master
+    - main
+  pull_request:
+    branches:
+    - master
+    - main
 
 jobs:
   build:

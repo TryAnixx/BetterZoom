@@ -27,7 +27,6 @@ public class ZoomService extends LabyModAddon {
     @Override
     public void onEnable() {
         api.registerForgeListener(this);
-        System.out.println("BetterZoom started!");
     }
 
     @Override

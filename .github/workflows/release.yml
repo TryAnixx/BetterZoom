@@ -15,9 +15,6 @@ jobs:
       - name: Change wrapper permissions
         run: 'chmod +x gradlew'
       # Build the addon
-      - name: Download LabyMod-API
-        run: 'sh gradlew downloadAPI --no-daemon'
-      # Build the addon
       - name: Build with Gradle
         run: 'sh gradlew build --no-daemon'
       # Upload the built addon

@@ -1,0 +1,10 @@
+{
+  "uuid": "%uuid%",
+  "name": "BetterZoom",
+  "mainClass": "de.tryanixx.betterzoom.ZoomService",
+  "description": "With this addon you can zoom in different factors.",
+  "version": 1,
+  "author": "TryAnixx & xConnorTV",
+  "category": 2,
+  "icon": "http://tryanixxaddons.de.cool/labytiktok/logoBetterZoom.png"
+}

@@ -61,7 +61,7 @@ public class ZoomService extends LabyModAddon {
                 this.prevZoom = Minecraft.getMinecraft().gameSettings.getOptionFloatValue(GameSettings.Options.FOV);
             }
             (Minecraft.getMinecraft()).gameSettings.smoothCamera = true;
-            Minecraft.getMinecraft().gameSettings.setOptionFloatValue(GameSettings.Options.FOV, 40F / zoomFactor);
+            Minecraft.getMinecraft().gameSettings.setOptionFloatValue(GameSettings.Options.FOV, 20F / zoomFactor);
             if(!hotbarslotstate) {
                 hotbarslot = Minecraft.getMinecraft().thePlayer.inventory.currentItem;
                 hotbarslotstate = true;
